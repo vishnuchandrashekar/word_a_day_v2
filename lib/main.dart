@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'word_card.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,6 +13,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  var wordTextCard = WordCard();
   @override
   Widget build(BuildContext context) {
     return MediaQuery(
@@ -21,6 +23,10 @@ class _MyAppState extends State<MyApp> {
           appBar: AppBar(
             title: const Text("Word a day"),
             centerTitle: true,
+          ),
+          body: Center(
+            // Displays the Card that hold the word as well as the definition.
+            child: wordTextCard.showWordCard(),
           ),
         ),
       ),
