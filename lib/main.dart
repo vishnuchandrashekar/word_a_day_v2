@@ -14,6 +14,16 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    throw UnimplementedError();
+    return MediaQuery(
+      data: const MediaQueryData(),
+      child: MaterialApp(
+        home: Scaffold(
+          appBar: AppBar(
+            title: const Text("Word a day"),
+            centerTitle: true,
+          ),
+        ),
+      ),
+    );
   }
 }
