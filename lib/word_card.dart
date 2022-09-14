@@ -7,18 +7,28 @@ class WordCard {
     return Card(
       child: Column(
         mainAxisSize: MainAxisSize.min,
-        children: const <Widget>[
+        children: <Widget>[
           SizedBox(
             width: 300,
             height: 200,
-            child: Center(
-              child: Text(
-                style: TextStyle(
-                  fontSize: 32,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: const [
+                Text(
+                  style: TextStyle(
+                    fontSize: 32,
+                  ),
+                  // Need to make this dynamic
+                  "Word!",
                 ),
-                // Need to make this dynamic
-                "Word!",
-              ),
+                //Spacer(flex: MainAxisAlignment.spaceEvenly,),
+                Text(
+                  "Description!!",
+                  style: TextStyle(
+                    fontSize: 22,
+                  ),
+                ),
+              ],
             ),
           ),
         ],

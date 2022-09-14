@@ -24,9 +24,15 @@ class _MyAppState extends State<MyApp> {
             title: const Text("Word a day"),
             centerTitle: true,
           ),
-          body: Center(
-            // Displays the Card that hold the word as well as the definition.
-            child: wordTextCard.showWordCard(),
+          body: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            //crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              // Displays the Card that hold the word as well as the definition.
+              Center(
+                child: wordTextCard.showWordCard(),
+              ),
+            ],
           ),
         ),
       ),
