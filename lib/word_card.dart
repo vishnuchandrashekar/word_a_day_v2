@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 
 // This class is used to display the card that shows the word as well...
 // ...as the definition
-class WordCard {
-  Card showWordCard() {
+class WordCard extends StatelessWidget{
+  const WordCard({super.key});
+
+  @override
+  Widget build(BuildContext context) {
     return Card(
       child: Column(
         mainAxisSize: MainAxisSize.min,

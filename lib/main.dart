@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:word_a_day_v2/main_page_drawer.dart';
 import 'search_bar.dart';
 import 'word_card.dart';
 
@@ -25,38 +26,40 @@ class MyHome extends StatefulWidget {
 }
 
 class _MyHomeState extends State<MyHome> {
-  var wordTextCard = WordCard();
+  // Word card object
+  //var wordTextCard = WordCard();
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-        appBar: AppBar(
-          title: const Text("Word a day"),
-          centerTitle: true,
-          actions: [
-            IconButton(
-              onPressed:
-                  // (() => Navigator.push(context,
-                  //     MaterialPageRoute(builder: (context) => const Search()))),
-                  () {
-                showSearch(
-                  context: context,
-                  delegate: CustomSearchDelegate(),
-                );
-              },
-              icon: const Icon(Icons.search),
-            ),
-          ],
-        ),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          //crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            // Displays the Card that hold the word as well as the definition.
-            Center(
-              child: wordTextCard.showWordCard(),
-            ),
-          ],
-        ),
-      );
+    return Scaffold(
+      drawer: const MainPageDrawer(), // Implements the Drawer
+      appBar: AppBar(                 // implements the App Bar
+        title: const Text("Word a day"),
+        centerTitle: true,
+        actions: [
+          IconButton(
+            onPressed:
+                // (() => Navigator.push(context,
+                //     MaterialPageRoute(builder: (context) => const Search()))),
+                () {
+              showSearch(
+                context: context,
+                delegate: CustomSearchDelegate(), // Implements the Search Bar
+              );
+            },
+            icon: const Icon(Icons.search),
+          ),
+        ],
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        //crossAxisAlignment: CrossAxisAlignment.center,
+        children:  const [
+          // Displays the Card that hold the word as well as the definition.
+          Center(
+            child: WordCard(), // Implements the Word Card
+          ),
+        ],
+      ),
+    );
   }
 }
