@@ -28,8 +28,7 @@ class _MyHomeState extends State<MyHome> {
   var wordTextCard = WordCard();
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
+    return  Scaffold(
         appBar: AppBar(
           title: const Text("Word a day"),
           centerTitle: true,
@@ -58,7 +57,6 @@ class _MyHomeState extends State<MyHome> {
             ),
           ],
         ),
-      ),
-    );
+      );
   }
 }
