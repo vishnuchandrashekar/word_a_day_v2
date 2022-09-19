@@ -1,8 +1,10 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 
 // This class is used to display the card that shows the word as well...
 // ...as the definition
-class WordCard extends StatelessWidget{
+class WordCard extends StatelessWidget {
   const WordCard({super.key});
 
   @override
@@ -16,13 +18,28 @@ class WordCard extends StatelessWidget{
             height: 200,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: const [
-                Text(
-                  style: TextStyle(
-                    fontSize: 32,
-                  ),
-                  // Need to make this dynamic
-                  "Word!",
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    ElevatedButton.icon(
+                      onPressed: (() {}),
+                      icon: const Icon(Icons.arrow_back),
+                      label: Text(''),
+                    ),
+                    Text(
+                      style: TextStyle(
+                        fontSize: 32,
+                      ),
+                      // Need to make this dynamic
+                      "Word!",
+                    ),
+                    ElevatedButton.icon(
+                      onPressed: (() {}),
+                      icon: const Icon(Icons.arrow_forward),
+                      label: Text(''),
+                    )
+                  ],
                 ),
                 //Spacer(flex: MainAxisAlignment.spaceEvenly,),
                 Text(
